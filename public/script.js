@@ -25,14 +25,20 @@ askBtn.addEventListener("click", async () => {
 
     const data = await response.json();
 
+    
+
     if (!response.ok) {
       throw new Error(data.error || "Something went wrong");
     }
 
-    answer.textContent = data.answer;
+    // answer.textContent = data.answer;
+
+    answer.innerHTML = DOMPurify.sanitize(marked.parse(data.answer));
 
   } catch (error) {
     console.error(error);
     answer.textContent = "Failed to get answer.";
   }
 });
+
+

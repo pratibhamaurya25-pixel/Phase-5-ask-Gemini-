@@ -27,6 +27,7 @@ app.post("/ask", async (req, res) => {
     res.json({
       answer,
     });
+    
   } catch (error){
     console.error(error);
 
@@ -36,8 +37,8 @@ app.post("/ask", async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+app.listen(5000, () => {
+    console.log(`Server running on port 5000`);
 });
+
